@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <style>
+    body{
+      background-color: rgb(180, 223, 80);
+  }
+  
+  .main_content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  #main_form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-top-color: blue;
+      border-right-color: green;
+      border-bottom-color: red;
+      border-left-color: orange;
+      border-width: 2px;
+      border-style: solid;
+      padding:50px;
+  }
+  </style>
+</head>
+<body>
+  <div class="main_content">
+  <h1>Sign Up</h1>
+  <form id="main_form" action="/insert" method="POST">
+    <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username1" required><br>
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password1" required><br>
+    <br>  
+  </div>
+
+    <input type="submit" value="Sign Up">
+  </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <style>
+    body{
+      background-color: rgb(180, 223, 80);
+  }
+  
+  .main_content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  #main_form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-top-color: blue;
+      border-right-color: green;
+      border-bottom-color: red;
+      border-left-color: orange;
+      border-width: 2px;
+      border-style: solid;
+      padding:50px;
+  }
+  </style>
+</head>
+<body>
+  <div class="main_content">
+  <h1>Login</h1>
+  <form id="main_form" action="/login" method="POST">
+    <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br><br>
+    </div>
+    <input type="submit" id="loginButton" value="Login">
+  </form>
+  <div id="message"></div>
+  <br>
+  <a href="/sign_up">If you don't have an account, Sign Up</a>
+</div>
+  <script>
+    // Add an event listener to the Login button
+    document.getElementById("loginButton").addEventListener("click", function(event) {
+      event.preventDefault();
+
+      // Get the input values
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Here, you can add logic to check the username and password against your database
+      // For demonstration, we'll simply check if the username is not empty
+      if (username.trim() === "") {
+        document.getElementById("message").textContent = "Username is required.";
+      } else {
+        // Store the username in local storage
+        localStorage.setItem("username", username);
+        localStorage.setItem("password",password);
+
+        // Submit the form
+        var form = document.querySelector("form");
+        form.submit();
+      }
+    });
+  </script>
+</body>
+</html>
